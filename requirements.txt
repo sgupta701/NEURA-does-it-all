@@ -1,0 +1,40 @@
+# --- Core frameworks ---
+fastapi
+uvicorn[standard]
+
+# --- Transformers + Model Inference ---
+transformers
+torch
+accelerate
+sentencepiece
+
+# --- LangChain local server ---
+langchain
+faiss-cpu
+ollama
+
+# --- Google API Integration ---
+google-auth
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+
+# --- Media & Task Execution ---
+ytmusicapi
+SpeechRecognition
+pyttsx3
+dateparser
+
+# --- NLP, ML ---
+scikit-learn
+pandas
+joblib
+nltk
+
+# --- Utils ---
+requests
+python-dotenv
+tqdm
+pydantic
+orjson
+httpx

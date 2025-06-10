@@ -1,0 +1,102 @@
+/* GENAI_ASSISTANT/genai_ui/src/components/Sidebar.css */
+
+.sidebar {
+  width: 300px;
+  padding: 16px;
+  background-color: #1e1e2f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.sidebar-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #444;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.sidebar-btn:hover {
+  background-color: #666;
+}
+
+.sidebar-divider {
+  border: none;
+  height: 1px;
+  background-color: #555;
+  margin: 15px 0;
+}
+
+.conversation-list {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+
+.conversation-bubble:hover {
+  background-color: #555;
+}
+
+.conversation-bubble-wrapper {
+  position: relative;
+}
+
+.conversation-bubble {
+  background-color: #333;
+  padding: 10px 35px 10px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.three-dots {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.conversation-bubble:hover .three-dots {
+  opacity: 1;
+}
+
+.conversation-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  z-index: 999;
+  width: 120px;
+  margin-top: 4px;
+}
+
+.conversation-menu div {
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.conversation-menu div:hover {
+  background-color: #555;
+}

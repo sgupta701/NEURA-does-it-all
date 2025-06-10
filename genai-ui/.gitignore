@@ -1,0 +1,52 @@
+# python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.pyd
+*.pickle
+*.pkl
+
+# Virtual environments
+venv/
+env/
+
+# Logs and cache
+*.log
+*.tmp
+*.swp
+*.bak
+*.db
+*.sqlite3
+
+# Python tool folders
+.cache/
+.mypy_cache/
+
+# snsitive Configs 
+.env
+*.env
+*.secret
+*.key
+*.pem
+
+# Explicit secrets
+app/config/credentials.json
+app/config/secrets.json
+app/config/token.pickle
+app/config/model_config.json   # ONLY if it contains sensitive info
+app/handlers/client_secret.json
+token.pickle
+
+# frontend
+node_modules/
+genai-ui/node_modules/
+genai-ui/dist/
+genai-ui/.vite/
+
+# === System ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+db.sqlite3 
