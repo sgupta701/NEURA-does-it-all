@@ -25,7 +25,7 @@ app.add_middleware(
 class ChatRequest(BaseModel):
     text: str
 
-# NLP Components 
+# NLP components 
 splitter = QuerySplitter()
 classifier = IntentClassifier()
 
