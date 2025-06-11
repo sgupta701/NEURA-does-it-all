@@ -1,4 +1,4 @@
-// GENAI_ASSISTANT/genai-ui/src/App.jsx
+// GENAI_ASSISTANT/genai-ui/src/App.jsx 
 
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
