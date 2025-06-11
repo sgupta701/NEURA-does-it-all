@@ -204,7 +204,7 @@ Make sure to:
 
 - Add your Gmail OAuth credentials in `config/client_secret.json`
 - Set up `.env` for environment variables
-- Run Ollama and load mistral model locally
+- Run Ollama and load mistral model locally..
 
 ### 🧠 Local LLM Setup (Mistral via Ollama)
 
