@@ -4,7 +4,7 @@
 ---
 
 ## 📌 Overview  
-Neura is a locally running, multi-intent natural language command execution system. Instead of writing individual commands, you simply chat in plain English — and Neura intelligently understands, splits, classifies, and executes each tasks.
+Neura is a locally running, multi-intent natural language command execution system. Instead of writing individual commands, u can simply chat in plain English — and Neura intelligently understands, splits, classifies, and executes each tasks.
 
 It can:
 
