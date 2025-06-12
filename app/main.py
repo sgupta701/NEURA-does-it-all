@@ -24,7 +24,7 @@ def main():
 
     print("\n[Responses]")
 
-    #intent for each query
+    #intent for each queryy
     for query in segments:
         intent = classifier.classify_intent(query)
 
