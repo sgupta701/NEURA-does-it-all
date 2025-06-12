@@ -19,3 +19,4 @@ INTENT_ROUTER = {
 def route_command(command: str, intent: str):
     handler = INTENT_ROUTER.get(intent, general.handle_general)
     return handler(command)
+
