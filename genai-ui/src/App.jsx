@@ -155,6 +155,7 @@ function App() {
                 timestamp={new Date().toLocaleTimeString()}
               />
             )}
+            
             <div ref={messagesEndRef} />
           </main>
 
