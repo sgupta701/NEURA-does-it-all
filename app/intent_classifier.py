@@ -6,6 +6,7 @@ class IntentClassifier:
     def __init__(self):
         self.classifier = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")
 
+
     def classify_intent(self, query: str) -> str:
         query_lower = query.lower()
 
