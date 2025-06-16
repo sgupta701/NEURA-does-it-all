@@ -16,4 +16,5 @@ function Sidebar({ conversations = [], onSelect, onNew }) {
     </div>
   );
 }
+
 export default Sidebar;
