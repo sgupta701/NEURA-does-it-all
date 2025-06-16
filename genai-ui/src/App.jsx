@@ -118,7 +118,6 @@ function App() {
         setConversationSaved={setConversationSaved}
         setInput={setInput}
       />
-
       <div className="chat-area">
         <div className="flex flex-col h-full w-full p-4">
           <header
