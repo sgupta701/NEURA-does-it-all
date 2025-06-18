@@ -156,7 +156,7 @@ Each split is classified via:
 ➕ A keyword-based rule system  
 
 ### Step 4: Intent Routing  
-Each intent is mapped to a function in the `handlers/` folder, for example:  
+Each intent is mapped to a function in the `handlers/` folder, for eg.;
 
 - `email` → `email_handler.py`  
 - `music` → `music.py`  
