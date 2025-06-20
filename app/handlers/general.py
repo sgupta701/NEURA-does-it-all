@@ -81,6 +81,12 @@ class GeneralBot:
                 "Glad I could help!",
                 "No problem!"
             ],
+            'help': [
+                "Sure! I would be happy to help",
+            ],
+            'few things': [
+                "Sure! I would be happy to help",
+            ],
             'bye': [
                 "Goodbye! Have a great day!",
                 "See you later!",
