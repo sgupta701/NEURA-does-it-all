@@ -14,6 +14,7 @@ llm_generator = LocalLLMGenerator()
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
+
 def get_gmail_service():
     creds = None
     if os.path.exists("token.pickle"):
@@ -63,14 +64,14 @@ def infer_subject(query: str) -> str:
         (["pregnant", "baby", "expecting"], "Exciting Family News"),
         # sensitive updates
         (["passed away", "sad news", "loss", "grieving", "funeral"], "Condolence & Support"),
-        (["health issue", "sick", "diagnosed", "hospital","not well","feeling low","fever"], "Personal Health Update"),
+        (["health issue", "sick", "diagnosed", "hospital", "not well", "feeling low", "fever"], "Personal Health Update"),
         # questions
         (["have a question", "need clarification", "could you help"], "Quick Clarification Request"),
         # work Issues
         (["bug", "issue", "error", "problem", "crash", "not working"], "Issue Report"),
         (["deployment", "release", "launch"], "Product Deployment Update"),
         # invitations
-        ([ "party", "invitation", "celebrate"], "You're Invited!"),
+        (["party", "invitation", "celebrate"], "You're Invited!"),
         # catch-up
         (["catch up", "long time", "how are you"], "Let's Catch Up"),
         # wishing birthday
@@ -88,6 +89,7 @@ def infer_subject(query: str) -> str:
 
     return "Important Update"
 
+
 def extract_sender_name(query: str) -> str:
     match = re.search(r"\bi\s*\((\w+)\)", query, re.IGNORECASE)
     return match.group(1) if match else "I"
@@ -99,7 +101,7 @@ def handle_email(query: str) -> str:
     sender = extract_sender_name(query)
     subject_line = infer_subject(query)
 
-    # to prompt the LLM
+    # prompt LLM
     prompt = (
         f"User request: {query}\n\n"
         f"The sender is: {sender}\n\n"
@@ -120,14 +122,34 @@ def handle_email(query: str) -> str:
 
     generated_email = clean_output(raw_output)
 
-    # Remove trailing common closings if LLM still adds them
+    # Remove trailing common closings
     for stop_phrase in ["Note:", "Thanks", "Thank you", "Sincerely", "Regards"]:
         if stop_phrase in generated_email:
             generated_email = generated_email.split(stop_phrase)[0].strip()
 
-    # email address extraction
+    # extract recipient
     email_match = re.search(r"[\w\.-]+@[\w\.-]+", query)
     to = email_match.group(0) if email_match else "recipient@example.com"
+
+    # typo check
+    typo_domains = {
+        "gamil.com": "gmail.com",
+        "gmial.com": "gmail.com",
+        "gnail.com": "gmail.com",
+        "hotnail.com": "hotmail.com",
+        "yaho.com": "yahoo.com",
+        "outlok.com": "outlook.com",
+        "rediffmai.com": "rediffmail.com",
+        "icloud.co": "icloud.com"
+    }
+
+    try:
+        user_part, domain_part = to.split("@")
+        if domain_part in typo_domains:
+            suggested = typo_domains[domain_part]
+            return f"⚠️ Email not sent.\nPossible typo in email address: `{domain_part}`\nDid you mean: `{user_part}@{suggested}`?"
+    except ValueError:
+        return "❌ Invalid email address format."
 
     # compose and send email
     message = EmailMessage()

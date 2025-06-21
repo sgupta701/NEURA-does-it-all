@@ -19,7 +19,7 @@ function App() {
     {
       id: 1,
       role: "assistant",
-      text: "Hi! I’m Neura, your GenAI assistant. How can I help you today?",
+      text: "Hi! I am Neura, your GenAI assistant. How can I help you today?",
       timestamp: new Date().toLocaleTimeString(),
     },
   ]);

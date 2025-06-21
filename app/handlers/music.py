@@ -16,6 +16,7 @@ def handle_music(query: str) -> str:
     # picking the first result
     top_result = search_results[0]
     video_id = top_result.get('videoId')
+    title = top_result.get('title', 'some music')
 
     if not video_id:
         return "❌ Unable to fetch video link."
@@ -25,9 +26,9 @@ def handle_music(query: str) -> str:
         # YouTube video
         url = f"https://www.youtube.com/watch?v={video_id}"
         webbrowser.open(url)
-        return f"🎬 Playing YouTube video in the other tab"
+        return f"🎬 Playing YouTube video: '{title}' in the other tab"
     else:
-        # youTube Music by default
+        # YouTube Music by default
         url = f"https://music.youtube.com/watch?v={video_id}"
         webbrowser.open(url)
-        return f"🎵 Playing music in the other tab"
+        return f"🎵 Playing '{title}' on YouTube Music in the other tab"
