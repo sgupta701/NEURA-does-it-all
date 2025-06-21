@@ -1,20 +1,34 @@
-#GENAI_ASSISTANT/app/handlers/calendar
- 
 import datetime
 import os
 import pickle
+import re
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+from dateparser.search import search_dates
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
-def clean_summary(text: str) -> str:
+def extract_datetime_and_clean_summary(text: str):
     """
-    Cleans the input text by removing common reminder phrases.
+    Extracts the datetime mentioned in the text and returns cleaned summary and datetime object.
     """
-    text = text.lower().strip()
+    parsed = search_dates(text, settings={"PREFER_DATES_FROM": "future"})
+    event_time = None
 
+    if parsed:
+        # Use the first parsed date
+        matched_text, dt = parsed[0]
+        event_time = dt
+
+        # Remove the matched date text from the original input
+        pattern = re.escape(matched_text)
+        cleaned_summary = re.sub(pattern, '', text, flags=re.IGNORECASE).strip()
+    else:
+        cleaned_summary = text
+
+    # Clean up leading phrases
+    cleaned_summary = cleaned_summary.lower().strip()
     prefixes = [
         "set a reminder to",
         "set a reminder for",
@@ -23,13 +37,15 @@ def clean_summary(text: str) -> str:
         "create an event to",
         "make a calendar event to"
     ]
-
     for prefix in prefixes:
-        if text.startswith(prefix):
-            cleaned = text[len(prefix):].strip()
-            return cleaned[0].upper() + cleaned[1:] 
+        if cleaned_summary.startswith(prefix):
+            cleaned_summary = cleaned_summary[len(prefix):].strip()
+            break
 
-    return text[0].upper() + text[1:] if text else text
+    if cleaned_summary:
+        cleaned_summary = cleaned_summary[0].upper() + cleaned_summary[1:]
+
+    return cleaned_summary or "Untitled Event", event_time
 
 
 def get_calendar_service():
@@ -61,12 +77,16 @@ def get_calendar_service():
 def handle_calendar(command: str) -> str:
     """
     Creates a calendar event based on the command string.
-    Currently uses fixed time slots (1 hour from now).
+    Uses actual time and date mentioned in the command if available.
     """
-    summary = clean_summary(command)
+    summary, dt = extract_datetime_and_clean_summary(command)
 
-    start_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=1)).isoformat() + 'Z'
-    end_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=2)).isoformat() + 'Z'
+    if dt is None:
+        # fallback: schedule 1 hour from now
+        dt = datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+
+    start_time = dt.isoformat()
+    end_time = (dt + datetime.timedelta(hours=1)).isoformat()
 
     service = get_calendar_service()
 

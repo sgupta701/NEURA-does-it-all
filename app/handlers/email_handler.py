@@ -41,7 +41,6 @@ def infer_subject(query: str) -> str:
         (["not attend", "can't attend", "unable to attend", "absent", "won't be able to attend"], "Unable to Attend Meeting"),
         (["reschedule", "postpone", "delay meeting", "delay call"], "Meeting Rescheduling"),
         # Follow-ups 
-        (["follow up", "following up", "checking in", "just following"], "Following Up on Previous Conversation"),
         (["reminder", "gentle reminder"], "Gentle Reminder"),
         # meetings 
         (["schedule meeting", "set up meeting", "arrange a meeting", "book a meeting"], "Meeting Request"),
@@ -55,7 +54,9 @@ def infer_subject(query: str) -> str:
         # Submissions & reports
         (["submit", "submission", "assignment", "report", "document"], "Submission Confirmation"),
         # application or request
-        (["apply for", "application", "interested in", "internship", "job role", "position"], "Application for Opportunity"),
+        (["apply for", "interested in", "job role", "position"], "Application for Opportunity"),
+        # follow up
+        (["follow up", "follow up for job", "application status"], "Follow up on Job Application"),
         # good news
         (["promotion", "new job", "got hired", "accepted offer"], "Exciting Career Update"),
         (["engaged", "wedding", "getting married"], "Happy Personal News"),
