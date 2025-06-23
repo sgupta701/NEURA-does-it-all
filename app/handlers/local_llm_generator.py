@@ -22,9 +22,8 @@ class LocalLLMGenerator:
         except requests.RequestException as e:
             return f"[Error contacting local LLM: {e}]"
 
-
 # test
 if __name__ == "__main__":
     gen = LocalLLMGenerator()
-    prompt = "Write a email to inform my boss that I cannot attend the meeting tomorrow due to some urgent work."
+    prompt = "Write a email to inform my boss riya at riya@gmail.com that I cannot attend the meeting tomorrow due to some urgent work."
     print(gen.generate_text(prompt))
