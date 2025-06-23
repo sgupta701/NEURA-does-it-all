@@ -2,7 +2,6 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 import re
 
-
 class QuerySplitter:
     def __init__(self, model_name="./app/finetuned_query_splitter"):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
