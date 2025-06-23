@@ -124,7 +124,6 @@ class QuerySplitter:
             truncation=True,
             max_length=1024
         )
-
         with torch.no_grad():
             output = self.model.generate(
                 **inputs,
@@ -133,7 +132,6 @@ class QuerySplitter:
                 num_beams=4,
                 pad_token_id=self.tokenizer.eos_token_id,
             )
-
         decoded_output = self.tokenizer.decode(output[0], skip_special_tokens=True)
 
         lines = decoded_output.split("Segments:")[-1].strip().split("\n")
