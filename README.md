@@ -67,7 +67,7 @@ GENAI_ASSISTANT/
 │   ├── utils.py
 │   └── token.pickle
 │
-├── genai-ui/                   # React frontend
+├── genai-ui/                  
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
@@ -88,11 +88,11 @@ GENAI_ASSISTANT/
 │   ├── package.json
 │   └── package-lock.json
 │
-├── venv/                       # Python virtual environment
+├── venv/                       
 ├── db.sqlite3                 
 ├── .env                        
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
+├── requirements.txt           
+├── README.md                   
 ├── .gitignore
 └── token.pickle
 ```
