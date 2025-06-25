@@ -34,7 +34,7 @@ env/
 app/config/credentials.json
 app/config/secrets.json
 app/config/token.pickle
-app/config/model_config.json   # ONLY if it contains sensitive info
+app/config/model_config.json   
 app/handlers/client_secret.json
 token.pickle
 

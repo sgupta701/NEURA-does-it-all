@@ -2,8 +2,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 import re
 
-
 class QuerySplitter:
+    
     def __init__(self, model_name="./app/finetuned_query_splitter"):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -124,7 +124,6 @@ class QuerySplitter:
             truncation=True,
             max_length=1024
         )
-
         with torch.no_grad():
             output = self.model.generate(
                 **inputs,
@@ -133,7 +132,6 @@ class QuerySplitter:
                 num_beams=4,
                 pad_token_id=self.tokenizer.eos_token_id,
             )
-
         decoded_output = self.tokenizer.decode(output[0], skip_special_tokens=True)
 
         lines = decoded_output.split("Segments:")[-1].strip().split("\n")

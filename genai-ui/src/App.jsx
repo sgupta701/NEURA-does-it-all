@@ -29,7 +29,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [showEmoji, setShowEmoji] = useState(false);
   const [conversationSaved, setConversationSaved] = useState(false);
-
   const messagesEndRef = useRef(null);
 
   useEffect(() => {

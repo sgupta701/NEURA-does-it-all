@@ -5,13 +5,13 @@ import re
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
-from dateutil import parser as dtparser  # more reliable datetime parsing
+from dateutil import parser as dtparser 
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
 
 def extract_summary_date_time(text: str):
-    # Normalize
+    #normalize
     text = text.strip().lower()
 
     # Remove prefixes
@@ -28,7 +28,7 @@ def extract_summary_date_time(text: str):
             text = text[len(prefix):].strip()
             break
 
-    # Match using 'on ... at ...'
+    #match using 'on ... at ...'
     match = re.search(r"(.+?)\s+on\s+(.+?)\s+at\s+(.+)", text)
     if not match:
         return text, None  # fallback
@@ -37,7 +37,7 @@ def extract_summary_date_time(text: str):
     date_part = match.group(2).strip()
     time_part = match.group(3).strip()
 
-    # Parse datetime safely
+    #parse datetime
     try:
         full_str = f"{date_part} {time_part}"
         dt = dtparser.parse(full_str)
