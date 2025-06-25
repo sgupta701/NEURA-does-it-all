@@ -188,6 +188,41 @@ The response is returned and rendered in the chat UI.
 
 ---
 
+## 📽️ Demo video link 
+
+Watch NEURA in action:
+
+▶️ [LinkedIn demo post](https://www.linkedin.com/posts/saumya-gupta-4385452a4_mistral-ollama-nlp-activity-7343154960869597184-sIhC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEloJCwBPPaMNpyq0mm_XSFMSNrM7BK6LVE)
+
+📁 [Google Drive video folder](https://drive.google.com/drive/folders/1d1oTiIeGz5GZqv11FlBCh29YdWcQGSQO?usp=drive_link)
+
+---
+
+## 🧪 Demo (Screenshots)
+
+![NEURA UI](images/prompt1.png)
+*ss 1: a typo in the mail address is detected and user is informed about the mail not sent*
+
+![NEURA UI](images/prompt2.png)
+*ss 2: prompt 1 - sentence with multiple queries*
+
+![NEURA UI](images/job_application_mail.png)
+*ss 3: mail drafted by local LLM and sent to the destination mail for the job application update query*
+
+![NEURA UI](images/report_submission.png)
+*ss 4: Calendar event added after the query is triggered*
+
+![NEURA UI](images/prompt3.png)
+*ss 5: prompt 2 - sentence with multiple queries*
+
+![NEURA UI](images/birthday_mail.png)
+*ss 6: mail drafted by local LLM and sent to the destination mail for the wishing Utkarsh a happy birthday*
+
+![NEURA UI](images/music.png)
+*ss 7: Music played as per the user query*
+
+---
+
 ## 💻 Setup & Installation
 
 ### 🔧 Backend (FastAPI)
@@ -224,19 +259,6 @@ cd genai-assistant/genai-ui
 npm install
 npm run dev
 ```
-
----
-
-## 🧪 Sample Input & Output (to be updated soon)
-
-**Input:**
-> 
-
-**Neura’s Actions:**
-
-- 
-- 
-- 
 
 ---
 
