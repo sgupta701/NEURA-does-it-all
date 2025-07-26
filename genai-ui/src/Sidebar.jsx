@@ -5,7 +5,7 @@ function Sidebar({ conversations = [], onSelect, onNew }) {
     <div className="sidebar">
       <button className="new-chat-btn" onClick={onNew}>+ New Chat</button>
       {conversations.map((conv, idx) => (
-        <div
+        <div 
           key={idx}
           className="chat-item"
           onClick={() => onSelect(conv)}
