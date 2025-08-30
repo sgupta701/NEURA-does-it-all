@@ -9,7 +9,7 @@ Neura is a locally running, multi-intent natural language command execution syst
 
 It can:
 
-- 📧 Send emails  
+- 📧 Send emails   
 - 🎵 Play music  
 - 📅 Schedule events  
 - 🌦️ Fetch weather  
