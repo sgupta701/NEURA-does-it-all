@@ -1,6 +1,6 @@
 # 🧠 NEURA 
 **Chat to Action - Multi task Execution System**   
-> *Neura is more than just a chat — it’s a real command executor...*
+> *Neura is more than just a chat — it’s a real command executor...* 
 ---
 
  
