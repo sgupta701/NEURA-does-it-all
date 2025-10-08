@@ -1,10 +1,6 @@
 # 🧠 NEURA 
 **Chat to Action - Multi task Execution System**   
-<<<<<<< HEAD
-> *Neura is more than just a chat - it’s a real command executor...*
-=======
 > *Neura is more than just a chat — it’s a real command executor...* 
->>>>>>> 5613097116882c7cfa0c71d254f84b013d929eee
 ---
 
  
