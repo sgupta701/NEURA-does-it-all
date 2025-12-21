@@ -18,6 +18,16 @@ It can:
 
 ---
 
+## 📽️ Demo video link 
+
+Watch NEURA in action:
+
+▶️ [LinkedIn demo post](https://www.linkedin.com/posts/saumya-gupta-4385452a4_mistral-ollama-nlp-activity-7343154960869597184-sIhC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEloJCwBPPaMNpyq0mm_XSFMSNrM7BK6LVE)
+
+📁 [Google Drive video folder](https://drive.google.com/drive/folders/1d1oTiIeGz5GZqv11FlBCh29YdWcQGSQO?usp=drive_link)
+
+---
+
 ## 🎯 Key Highlights
 
 - ✅ Multi-intent message handling  
@@ -186,16 +196,6 @@ The response is returned and rendered in the chat UI.
 | 🖥️ Chat UI                | React + Vite                               |
 | 🎙️ Voice Input            | Web Speech API                             |
 | 💬 Chat Memory & Export   | Save, rename, export chats                 |
-
----
-
-## 📽️ Demo video link 
-
-Watch NEURA in action:
-
-▶️ [LinkedIn demo post](https://www.linkedin.com/posts/saumya-gupta-4385452a4_mistral-ollama-nlp-activity-7343154960869597184-sIhC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEloJCwBPPaMNpyq0mm_XSFMSNrM7BK6LVE)
-
-📁 [Google Drive video folder](https://drive.google.com/drive/folders/1d1oTiIeGz5GZqv11FlBCh29YdWcQGSQO?usp=drive_link)
 
 ---
 
