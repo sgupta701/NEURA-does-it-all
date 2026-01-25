@@ -28,6 +28,31 @@ Watch NEURA in action:
 
 ---
 
+## 🧪 Demo (Screenshots)
+
+![NEURA UI](images/prompt1.png)
+*ss 1: a typo in the mail address is detected and user is informed about the mail not sent*
+
+![NEURA UI](images/prompt2.png)
+*ss 2: prompt 1 - sentence with multiple queries*
+
+![NEURA UI](images/job_application_mail.png)
+*ss 3: mail drafted by local LLM and sent to the destination mail for the job application update query*
+
+![NEURA UI](images/report_submission.png)
+*ss 4: Calendar event added after the query is triggered*
+
+![NEURA UI](images/prompt3.png)
+*ss 5: prompt 2 - sentence with multiple queries*
+
+![NEURA UI](images/birthday_mail.png)
+*ss 6: mail drafted by local LLM and sent to the destination mail for the wishing Utkarsh a happy birthday*
+
+![NEURA UI](images/music.png)
+*ss 7: Music played as per the user query*
+
+---
+
 ## 🎯 Key Highlights
 
 - ✅ Multi-intent message handling  
@@ -196,31 +221,6 @@ The response is returned and rendered in the chat UI.
 | 🖥️ Chat UI                | React + Vite                               |
 | 🎙️ Voice Input            | Web Speech API                             |
 | 💬 Chat Memory & Export   | Save, rename, export chats                 |
-
----
-
-## 🧪 Demo (Screenshots)
-
-![NEURA UI](images/prompt1.png)
-*ss 1: a typo in the mail address is detected and user is informed about the mail not sent*
-
-![NEURA UI](images/prompt2.png)
-*ss 2: prompt 1 - sentence with multiple queries*
-
-![NEURA UI](images/job_application_mail.png)
-*ss 3: mail drafted by local LLM and sent to the destination mail for the job application update query*
-
-![NEURA UI](images/report_submission.png)
-*ss 4: Calendar event added after the query is triggered*
-
-![NEURA UI](images/prompt3.png)
-*ss 5: prompt 2 - sentence with multiple queries*
-
-![NEURA UI](images/birthday_mail.png)
-*ss 6: mail drafted by local LLM and sent to the destination mail for the wishing Utkarsh a happy birthday*
-
-![NEURA UI](images/music.png)
-*ss 7: Music played as per the user query*
 
 ---
 
