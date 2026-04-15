@@ -4,31 +4,31 @@
 ---
 
  
-## 📌 Overview  
+## Overview  
 Neura is a locally running, multi-intent natural language command execution system. Instead of writing individual commands, u can simply chat in plain English - and Neura intelligently understands, splits, classifies, and executes each task all at once..
 
 It can:
 
-- 📧 Send emails   
-- 🎵 Play music  
-- 📅 Schedule events  
-- 🌦️ Fetch weather  
-- 📰 Deliver news  
+- Send emails   
+- Play music  
+- Schedule events  
+- Fetch weather  
+- Deliver news  
 —all in one go.
 
 ---
 
-## 📽️ Demo video link 
+## Demo video link 
 
 Watch NEURA in action:
 
-▶️ [LinkedIn demo post](https://www.linkedin.com/posts/saumya-gupta-4385452a4_mistral-ollama-nlp-activity-7343154960869597184-sIhC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEloJCwBPPaMNpyq0mm_XSFMSNrM7BK6LVE)
+[LinkedIn demo post](https://www.linkedin.com/posts/saumya-gupta-4385452a4_mistral-ollama-nlp-activity-7343154960869597184-sIhC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEloJCwBPPaMNpyq0mm_XSFMSNrM7BK6LVE)
 
-📁 [Google Drive video folder](https://drive.google.com/drive/folders/1d1oTiIeGz5GZqv11FlBCh29YdWcQGSQO?usp=drive_link)
+[Google Drive video folder](https://drive.google.com/drive/folders/1d1oTiIeGz5GZqv11FlBCh29YdWcQGSQO?usp=drive_link)
 
 ---
 
-## 🧪 Demo (Screenshots)
+## Demo (Screenshots)
 
 ![NEURA UI](images/prompt1.png)
 *ss 1: a typo in the mail address is detected and user is informed about the mail not sent*
@@ -53,17 +53,17 @@ Watch NEURA in action:
 
 ---
 
-## 🎯 Key Highlights
+## Key Highlights
 
-- ✅ Multi-intent message handling  
-- ⚙️ Modular handler-based design  
-- ⚙️ Finetuning of pretrained model T5 for query splitting, and use of other pretrained model and APIs for rest of the tasks
-- 💡 LLM-based email generation (local Mistral via ollama)  
-- 🌐 React frontend + FastAPI backend  
+- Multi-intent message handling  
+- Modular handler-based design  
+- Finetuning of pretrained model T5 for query splitting, and use of other pretrained model and APIs for rest of the tasks
+- LLM-based email generation (local Mistral via ollama)  
+- React frontend + FastAPI backend  
 
 ---
 
-## 🧱 Project Structure
+## Project Structure
 
 ```bash
 GENAI_ASSISTANT/
@@ -135,7 +135,7 @@ GENAI_ASSISTANT/
 
 ---
 
-## ⚙️ Core Workflow
+## Core Workflow
 
 ### Step 1: Message Input  
 User types or speaks a message:
@@ -146,13 +146,13 @@ User types or speaks a message:
 ### Step 2: Query Splitting  
 The message is split using a fine-tuned T5-small model (1000 samples), with fallback logic to preserve tokens (like emails, names).
 
-### 🔍 Fine-tuned Query Splitter Model
+### fine-tuned Query Splitter Model
 
 This project includes a custom fine-tuned **T5-small** model for intelligently splitting complex, multi-intent user queries into structured sub-commands. This enables the assistant to process and route multiple tasks from a single user input, such as:
 
 ---
 
-#### 🔧 Fine-tuning Details
+#### Fine-tuning Details
 
 - **Base model:** [`t5-small`](https://huggingface.co/t5-small)
 - **Training platform:** Google Colab
@@ -168,19 +168,9 @@ This project includes a custom fine-tuned **T5-small** model for intelligently s
 
 ---
 
-#### 📁 Model Artifacts
+#### Model Artifacts
 
 After fine-tuning, model files were exported and stored in finetuned_query_splitter. These are loaded at runtime to perform context-aware query segmentation.
-
-```
-app/finetuned_query_splitter/
-├── config.json
-├── model.safetensors
-├── tokenizer.json
-├── spiece.model
-├── special_tokens_map.json
-├── tokenizer_config.json
-```
 
 ---
 
@@ -188,8 +178,8 @@ app/finetuned_query_splitter/
 ### Step 3: Intent Classification  
 Each split is classified via:
 
-🔍 A DistilBERT model  
-➕ A keyword-based rule system  
+- A DistilBERT model  
+- A keyword-based rule system  
 
 ### Step 4: Intent Routing  
 Each intent is mapped to a function in the `handlers/` folder, for eg.;
@@ -200,33 +190,33 @@ Each intent is mapped to a function in the `handlers/` folder, for eg.;
 ### Step 5: Execution + Response  
 Each task is executed:
 
-- ✉️ Emails via Gmail API + LLM generation (mistral via Ollama) 
-- ☁️ Weather from OpenWeather API  
-- 🗓️ Calendar via Google Calendar API  
-- 📰 News from NewsAPI  
-- 🎧 Music via YouTube Music API  
+- Emails via Gmail API + LLM generation (mistral via Ollama) 
+- Weather from OpenWeather API  
+- Calendar via Google Calendar API  
+- News from NewsAPI  
+- Music via YouTube Music API  
 
 The response is returned and rendered in the chat UI.
 
 ---
 
-## 🧪 Features
+## Features
 
 | Feature                  | Description                                |
 |--------------------------|--------------------------------------------|
-| 🔁 Multi-intent input     | Handle many actions in one query           |
-| 🧠 Finetuned Query Splitter | finetuning of on T5-small on local dataset of 1064 samples  |
-| 🧭 Hybrid Intent Classifier | BERT + rules                              |
-| 💌 Local LLM Generator    | Mistral (Ollama) for text generation       |
-| 🖥️ Chat UI                | React + Vite                               |
-| 🎙️ Voice Input            | Web Speech API                             |
-| 💬 Chat Memory & Export   | Save, rename, export chats                 |
+| Multi-intent input     | Handle many actions in one query           |
+| Finetuned Query Splitter | finetuning of on T5-small on local dataset of 1064 samples  |
+| Hybrid Intent Classifier | BERT + rules                              |
+| Local LLM Generator    | Mistral (Ollama) for text generation       |
+| Chat UI                | React + Vite                               |
+| Voice Input            | Web Speech API                             |
+| Chat Memory & Export   | Save, rename, export chats                 |
 
 ---
 
-## 💻 Setup & Installation
+## Setup & Installation
 
-### 🔧 Backend (FastAPI)
+### Backend (FastAPI)
 
 ```bash
 cd GENAI_ASSISTANT/app
@@ -242,7 +232,7 @@ Make sure to:
 - Set up `.env` for environment variables
 - Run Ollama and load mistral model locally..
 
-### 🧠 Local LLM Setup (Mistral via Ollama)
+### Local LLM Setup (Mistral via Ollama)
 
 ```bash
 Install Ollama from: https://ollama.com/download
@@ -253,7 +243,7 @@ ollama pull mistral
 ollama run mistral
 ```
 
-### 🖼️ Frontend (React)
+### Frontend (React)
 
 ```bash
 cd genai-assistant/genai-ui
@@ -263,7 +253,7 @@ npm run dev
 
 ---
 
-## 🧠 Model Details
+## Model Details
 
 | Component          | Model                                         |
 |--------------------|-----------------------------------------------|
@@ -273,7 +263,7 @@ npm run dev
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: FastAPI, Transformers, Pydantic, Google API, Mistral (Ollama)  
 - **Frontend**: React, Vite, Tailwind CSS, Web Speech API  
@@ -282,8 +272,8 @@ npm run dev
 
 ---
 
-## 📂 Future Improvements
+## Future Improvements
 
-- ⏳ Add database persistence for reminders  
-- 🗣️ Support multi-language commands  
-- 🧩 More plugin-style handlers (e.g., notes, file upload)  
+- Add database persistence for reminders  
+- Support multi-language commands  
+- More plugin-style handlers (e.g., notes, file upload)  
