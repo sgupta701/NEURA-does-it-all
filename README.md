@@ -287,8 +287,3 @@ npm run dev
 - ⏳ Add database persistence for reminders  
 - 🗣️ Support multi-language commands  
 - 🧩 More plugin-style handlers (e.g., notes, file upload)  
-
----
-
-## 📜 License  
-This project is open-source and free to use for educational or non-commercial use.
